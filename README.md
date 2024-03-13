@@ -5,7 +5,7 @@ This is an ordinary Node.js app. This app shows ideas for different recipes and 
  To create this app, we used different coding technologies as a frontend, which include HTML, CSS, and PUG. The second technique is backend, which also includes parts such as node.js, express.js, and dataset mock_db.json.
 
 
-The project code can be accessed using this link [  ]
+The project code can be accessed using this link [ https://github.com/00016136BIS/WebTechnology ]
 
-To make the app available for all users, render.com was used. 
+To make the app available for all users, render.com was used. The app can be accessed and used through this link [ https://zero0016136-webtech-cw2.onrender.com ]
  
