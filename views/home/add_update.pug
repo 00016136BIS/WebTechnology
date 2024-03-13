@@ -1,0 +1,55 @@
+include ../head.pug
+body
+  .container.mt-5
+    h1 #{mode}
+    .mb-3
+      label(for="RecipeName" class="form-label") Recipe Name
+      input(type="text" class="form-control" id="RecipeName" name="RecipeName" required)
+    .mb-3
+      label(for="MainIngridient" class="form-label") Main Ingridient
+      input(type="text" class="form-control" id="MainIngridient" name="MainIngridient" required)
+    .mb-3
+      label(for="CookingTime" class="form-label") Cooking time
+      input(type="number" class="form-control" id="CookingTime" name="CookingTime" required)
+    .mb-3
+      label(for="contactPhone" class="form-label") Contact Phone
+      input(type="tel" class="form-control" id="contactPhone" name="contactPhone" required)
+    .mb-3
+      button(type="button" class="btn btn-success" onclick="submitForm()") #{mode === 'Update' ? 'Update' : 'Add'}
+      span &nbsp;
+      button(type="button" class="btn btn-primary" onclick="window.location.href='/'") Back to list
+   
+
+  script.
+    if ("#{mode}" === "Update") {
+      const RecipeData = !{JSON.stringify(RecipeData || {})}.Recipe;
+      document.getElementById('RecipeName').value = RecipeData.RecipeName || '';
+      document.getElementById('MainIngridient').value = RecipeData.MainIngridient || '';
+      document.getElementById('CookingTime').value = RecipeData.CookingTime || '';
+      document.getElementById('contactPhone').value = RecipeData.contactPhone || '';
+      // Update other fields similarly
+    }
+
+    function submitForm() {
+      const RecipeData = {
+        RecipeName: document.getElementById('RecipeName').value,
+        MainIngridient: document.getElementById('MainIngridient').value,
+        CookingTime: document.getElementById('CookingTime').value,
+        contactPhone: document.getElementById('contactPhone').value,
+      };
+
+      const url = "#{mode}" === "Update" ? `/api/Recipe/${!{JSON.stringify(RecipeData)}.id}` : '/api/Recipe';
+      const method = "#{mode}" === "Update" ? 'put' : 'post';
+
+      axios[method](url, RecipeData)
+        .then(response => {
+          alert('Success!');
+          location.href = '/';
+        })
+        .catch(error => {
+          if(error.response)
+            alert(JSON.stringify(error.response.data.errors));
+          else
+            alert(error);
+        });
+    }
