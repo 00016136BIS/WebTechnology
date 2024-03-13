@@ -7,5 +7,23 @@
             "CookingTime": "8",
             "contactPhone": "+998998313930"
         }
+    },
+    {
+        "id": "W9cX",
+        "Recipe": {
+            "RecipeName": "Plov",
+            "MainIngridient": "fghjkljhgf",
+            "CookingTime": "2",
+            "contactPhone": "+998998313930"
+        }
+    },
+    {
+        "id": "NCtl",
+        "Recipe": {
+            "RecipeName": "Manti",
+            "MainIngridient": "Sabzi Gosht Guruch",
+            "CookingTime": "1",
+            "contactPhone": "+998998313930"
+        }
     }
 ]

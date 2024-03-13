@@ -1,7 +1,7 @@
 include ../head.pug
 body
   .container.mt-5
-    h1 #{mode}
+    h1.text-white #{mode}
     .mb-3
       label(for="RecipeName" class="form-label") Recipe Name
       input(type="text" class="form-control" id="RecipeName" name="RecipeName" required)
@@ -38,7 +38,7 @@ body
         contactPhone: document.getElementById('contactPhone').value,
       };
 
-      const url = "#{mode}" === "Update" ? `/api/Recipe/${!{JSON.stringify(RecipeData)}.id}` : '/api/Recipe';
+      const url = "#{mode}" === "Update" ? `/api/Recipe/${!{JSON.stringify(RecipeData||{})}.id}` : '/api/Recipe';
       const method = "#{mode}" === "Update" ? 'put' : 'post';
 
       axios[method](url, RecipeData)

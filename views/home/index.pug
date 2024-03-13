@@ -1,22 +1,23 @@
 include ../head.pug
+
 body
     .container.mt-5
       .row.d-flex.align-items-center
         .col-md-6
-          h1 List
+          h1.text-white List
         .col-md-6.text-end
           a.btn.btn-success(href='/add', role='button') Add      
-      table.table.table-responsive.table-hover.table-striped.table-dark
-        thead
+      table.table.table-responsive.table-striped
+        thead.text1
           tr
             th(scope="col") ID
             th(scope="col") Recipe Name
             th(scope="col") Main Ingridient
             th(scope="col") Cooking time
             th(scope="col") Contact Phone
-             th(scope="col") Actions
-           
-        tbody
+            th(scope="col") Actions
+  
+        tbody.text2
 script.
   document.addEventListener('DOMContentLoaded', function() {
     axios.get('/api/Recipe').then(function(response) {

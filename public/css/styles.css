@@ -1,0 +1,30 @@
+body {
+    background-image: url('https://lifehacker.ru/wp-content/uploads/2019/01/15-receptov-uzhina-na-skoruyu-ruku-_1547236058.jpg');
+    background-size: cover;
+    
+}
+
+thead.text1{
+    background-color: brown;
+    color: black;
+    border: none;
+   
+}
+
+tbody tr  {
+    background-color: brown ;
+    color: white;
+    border: none; 
+
+}
+
+.container.mt-5{
+    background-color: brown ;
+    color: white;
+    border: none; 
+
+}
+
+
+
+
